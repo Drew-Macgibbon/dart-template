@@ -10,6 +10,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="prokit_flutter">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <script>
+    var serviceWorkerVersion = null;
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
@@ -23,6 +28,7 @@
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
+
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
         navigator.serviceWorker.register('flutter_service_worker.js');
@@ -30,30 +36,45 @@
     }
   </script>
 
-  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+
+
+  <!-- <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-messaging.js"></script> -->
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbs3HJCBG8eKiMyGaz6csI25Cwe5MsL_Y"></script>
-
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbs3HJCBG8eKiMyGaz6csI25Cwe5MsL_Y"></script> -->
   <script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        }
+      }).then(function(engineInitializer) {
+        return engineInitializer.initializeEngine();
+      }).then(function(appRunner) {
+        return appRunner.runApp();
+      });
+    });
+  </script>
+  <!-- <script>
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyDnzPnA2miSk_kKXLRjYjC-vGW_rJiS5lc",
-    authDomain: "prokit-flutter.firebaseapp.com",
-    databaseURL: "https://prokit-flutter.firebaseio.com",
-    projectId: "prokit-flutter",
-    storageBucket: "prokit-flutter.appspot.com",
-    messagingSenderId: "390414775798",
-    appId: "1:390414775798:web:6810689181c30e01aa03d7",
-    measurementId: "G-98QQYB8513"
-  };
+  // var firebaseConfig = {
+  //   apiKey: "AIzaSyDnzPnA2miSk_kKXLRjYjC-vGW_rJiS5lc",
+  //   authDomain: "prokit-flutter.firebaseapp.com",
+  //   databaseURL: "https://prokit-flutter.firebaseio.com",
+  //   projectId: "prokit-flutter",
+  //   storageBucket: "prokit-flutter.appspot.com",
+  //   messagingSenderId: "390414775798",
+  //   appId: "1:390414775798:web:6810689181c30e01aa03d7",
+  //   measurementId: "G-98QQYB8513"
+  // };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
-  <script src="main.dart.js?version=4" type="application/javascript"></script>
+  // firebase.initializeApp(firebaseConfig);
+  // firebase.analytics();
+</script> -->
+  <!-- <script src="main.dart.js?version=4" type="application/javascript"></script> -->
 </body>
 </html>

@@ -1,10 +1,8 @@
 //region imports
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 //import 'package:flutter_stripe/flutter_stripe.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:prokit_flutter/fullApps/cloudStorage/model/CSDataModel.dart';
@@ -42,11 +40,6 @@ void main() async {
   defaultToastGravityGlobal = ToastGravity.BOTTOM;
 
   if (isMobile || isWeb) {
-    Firebase.initializeApp().then((value) {
-      MobileAds.instance.initialize();
-
-      //FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
-    });
 
     if (isMobile) {
       try {

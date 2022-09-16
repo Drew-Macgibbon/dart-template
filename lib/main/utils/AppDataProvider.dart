@@ -1578,7 +1578,7 @@ ProTheme getIntegrations() {
 
   list.add(ProTheme(name: 'Generate QR Code', title_name: 'Integrations', show_cover: false, widget: GenerateQRCodeScreen(), darkThemeSupported: true, tag: ''));
   list.add(ProTheme(name: 'PDF Viewer', title_name: 'Integrations', show_cover: false, sub_kits: getPdfListScreen(), darkThemeSupported: true, tag: ''));
-  list.add(ProTheme(name: 'Firebase CRUD', title_name: 'Integrations', show_cover: false, widget: FUserListScreen(), darkThemeSupported: true, type: ''));
+  // list.add(ProTheme(name: 'Firebase CRUD', title_name: 'Integrations', show_cover: false, widget: FUserListScreen(), darkThemeSupported: true, type: ''));
   list.add(ProTheme(name: 'Chart', title_name: 'Integrations', show_cover: false, sub_kits: getChartList(), darkThemeSupported: true, type: ''));
   list.add(ProTheme(name: 'Third Party Integration', title_name: 'Integrations', type: '', show_cover: false, sub_kits: getIntegration(), darkThemeSupported: true));
   list.add(ProTheme(name: 'UI Interactions', title_name: 'Integrations', type: '', show_cover: false, sub_kits: getUI(), darkThemeSupported: true));
